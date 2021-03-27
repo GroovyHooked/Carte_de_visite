@@ -1,0 +1,653 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --background: #3D405B;
+    --texte: white;
+    --texte2: #E07A5F;
+    --couleur1: #81B29A;
+    --couleur2: #F2CC8F;
+    --couleur3: #F4F1DE;
+    --nav: #52567A;
+}
+body{
+    background-color: var(--background);
+}
+
+/* ------ Header -------*/
+header h2{
+    z-index: -1;
+    pointer-events: none;
+}
+header{
+    position: relative;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    padding: 10px 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: var(--couleur3);
+}
+
+    /* ------ Menu Burger -------*/
+.burger{
+    position: absolute;
+    right: 35px;
+    transition: all 1s ease;
+}
+
+.trait1{
+    position: relative;
+    top: 8px;
+    left: 0px;
+    width: 2em;
+    height: 0.2em;
+    background-color: var(--couleur3);
+    border-radius: 2px 2px 2px 2px;
+    transform-origin: top right;
+    transition: all 0.3s ease;
+}
+.trait2{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 2em;
+    height: 0.2em;
+    background-color: var(--couleur3);
+    border-radius: 2px 2px 2px 2px;
+    transform-origin: bottom right;
+    transition: all 0.3s ease;
+}
+span.ss-trait{
+    display: inline-block;
+    position: relative;
+    top: 0px;;
+    width: 1em;
+    height: 0.2em;
+    background-color: var(--couleur3);
+    border-radius: 2px 0px 0px 2px;
+    transition: transform 0.3s ease;
+}
+span.ss-trait:after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 1em;;
+    width: 1em;
+    height: 0.2em;
+    background-color: var(--couleur3);
+    border-radius: 0px 2px 2px 0px;
+    transition: transform 0.3s ease-in;
+}
+                /* ------ Transitions Menu Burger -------*/
+.burger:hover > span.ss-trait{
+    transform: translateX(5px);
+}
+.burger:hover > span.ss-trait:after{
+    transform: translateX(-10px);
+}
+.burger:active .trait1{
+    transform: rotate(-40deg);
+}
+.burger:active .trait2{
+    transform: rotate(40deg);
+}
+
+.burger:active span.ss-trait{
+    opacity: 0;
+}
+.burger:active span.ss-trait:after{
+    opacity: 0;
+}  
+/* ------ ------- -------*/
+
+/* ---- Navigation --------*/
+nav{
+   position: absolute;
+    display: block;
+    background-color: var(--nav);
+    top: 0;
+    right: 0px;
+    width: 60%;
+    margin-top: -20px ;
+    margin: 0 auto;
+    height: 100vh;
+    overflow: hidden;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: all 0.5s ease;
+    z-index: 4;
+    transition: transform 0.3 ease-in;
+}
+.croix{
+  position: relative;
+  display: block;
+  top: 25px;
+  left:10px;
+  width: 2em;
+  height: 0.2em;
+  background-color: var(--background);
+  border-radius: 2px 2px 2px 2px;
+  transform: rotate(45deg);
+  transition: transform 0.3 ease-in;
+}
+.croix:after{
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 2em;
+  height: 0.2em;
+  background-color: var(--background);
+  border-radius: 2px 2px 2px 2px;
+  transform: rotate(-90deg);
+  transition: transform 0.3 ease-in;
+}
+nav div{
+  width: 2.5em;
+  height: 2.5em;
+}
+nav div:hover .croix:after{
+  transform: scale(0.8);
+}
+nav div:hover .croix{
+  transform: scale(0.8);
+}
+nav ul li{
+    list-style-type: none;
+    text-align: center;
+}
+/*header>.burger:focus ~ nav{
+    width: 200px;
+    padding-right: 200px;
+}*/
+.burger:active ~ nav{
+  transform: scaleX(1);
+}
+/* ------ ------- -------*/
+
+/*  -----------------------  EFFET SUR TITRES H3 ------------------------------ */
+.TITRE{
+    width: 100%;
+    font-size: calc(1em + 0.2vw);
+}
+
+.titre span {
+    opacity: 0;
+    margin-right: -8px;  /* supprime l'espacement entre les lettres span mise à la ligne dans le html */
+}
+@keyframes anim {      
+  0%{opacity: 0;}
+  25%{opacity: 0.3;}
+  50%{opacity: 0.6;}
+  75%{opacity: 0.9;}
+  100%{opacity: 1; animation-play-state: paused;}
+}
+  /*      PASSION          */
+  .pp{
+    animation: anim 0.3s linear 1;
+     animation-fill-mode: forwards; /*      P          */
+  }
+  .pa{
+    animation: anim 0.3s linear 1;     /*      A          */
+    animation-delay: 0.15s;
+    animation-fill-mode: forwards;
+  }
+  .ps-1{
+    animation: anim 0.3s linear 1;      /*      S         */
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+  }
+  .ps-2{
+     animation: anim 0.3s linear 1;     /*      S         */
+     animation-delay: 0.45s;
+    animation-fill-mode: forwards;
+  }
+  .pi{
+     animation: anim 0.3s linear 1;      /*      I         */
+     animation-delay: 0.6s;
+    animation-fill-mode: forwards;
+  }
+  .po{
+     animation: anim 0.75s linear 1;        /*      O         */
+     animation-delay: 0.75s;
+    animation-fill-mode: forwards;
+  }
+  .pn{ 
+     animation: anim 0.9s linear 1;     /*      N         */
+     animation-delay: 0.9s;
+    animation-fill-mode: forwards;
+  }
+            /*      -------------          */
+  
+          /*      DETERMINATION          */
+  .dd{
+    animation: anim 0.3s linear 1;          /*      D         */
+    animation-delay: 1.05s;
+    animation-fill-mode: forwards;
+  }
+  .de-1{
+    animation: anim 0.3s linear 1;            /*      E         */
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+  }
+  .dt-1{
+    animation: anim 0.3s linear 1;          /*      T         */
+    animation-delay: 1.35s;
+    animation-fill-mode: forwards;
+  }
+  .de-2{
+    animation: anim 0.3s linear 1;           /*      E         */
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+  }
+  .dr{
+    animation: anim 0.3s linear 1;       /*      R         */
+    animation-delay: 1.65s;
+    animation-fill-mode: forwards;
+  }
+  .dm{
+    animation: anim 0.3s linear 1;        /*      M         */
+    animation-delay: 1.8s;
+    animation-fill-mode: forwards;
+  }
+  .di-1{
+    animation: anim 0.3s linear 1;      /*      I         */
+    animation-delay: 1.95s;
+    animation-fill-mode: forwards;
+  }
+  .dn-1{
+    animation: anim 0.3s linear 1;       /*      N         */
+    animation-delay: 2.1s;
+    animation-fill-mode: forwards;
+  }
+  .da{
+    animation: anim 0.3s linear 1;          /*      A         */
+    animation-delay: 2.25s;
+    animation-fill-mode: forwards;
+  }
+  .dt-2{
+    animation: anim 0.3s linear 1;           /*      T         */
+    animation-delay: 2.4s;
+    animation-fill-mode: forwards;
+  }
+  .di-2{
+    animation: anim 0.3s linear 1;          /*      I         */
+    animation-delay: 2.55s;
+    animation-fill-mode: forwards;
+  }
+  .do{
+    animation: anim 0.3s linear 1;            /*      O         */
+    animation-delay: 2.7s;
+    animation-fill-mode: forwards;
+  }
+  .dn-2{
+    animation: anim 0.3s linear 1;         /*      N         */
+    animation-delay: 2.85s;
+    animation-fill-mode: forwards;
+  }
+           /*      -------------          */
+  
+           /*      ADAPTATION          */
+  
+  .aa-1{
+    animation: anim 0.3s linear 1;         /*      A         */
+    animation-delay: 2.85s;
+    animation-fill-mode: forwards;
+  }
+  .ad{
+    animation: anim 0.3s linear 1;         /*      D         */
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+  }
+  .aa-2{
+    animation: anim 0.3s linear 1;         /*      A         */
+    animation-delay: 3.15s;
+    animation-fill-mode: forwards;
+  }
+  .ap{
+    animation: anim .3s linear 1;         /*      P         */
+    animation-delay: 3.3s;
+    animation-fill-mode: forwards;
+  }
+  .at-1{
+    animation: anim .3s linear 1;         /*      T         */
+    animation-delay: 3.45s;
+    animation-fill-mode: forwards;
+  }
+  .aa-3{
+    animation: anim .3s linear 1;         /*      A         */
+    animation-delay: 3.6s;
+    animation-fill-mode: forwards;
+  }
+  .at-2{
+    animation: anim .3s linear 1;         /*      T         */
+    animation-delay: 3.75s;
+    animation-fill-mode: forwards;
+  }
+  .ai{
+    animation: anim .3s linear 1;         /*      I         */
+    animation-delay: 3.9s;
+    animation-fill-mode: forwards;
+  }
+  .ao{
+    animation: anim .3s linear 1;         /*      O         */
+    animation-delay: 4.05s;
+    animation-fill-mode: forwards;
+  }
+  .an{
+    animation: anim 0.3s linear 1;         /*      N         */
+    animation-delay: 4.2s;
+    animation-fill-mode: forwards;
+  }
+/*  ----------------------- ------------ ------------------------------ */
+
+/* ------ Présentation -------*/
+
+       /* ------ Bouton -------*/
+       .bouton{
+        position: relative;
+        top: -3em;
+        text-align: center;
+        width: 150px;
+        height: 50px;
+        line-height: 50px;
+        background-color: var(--couleur3);
+        border-radius: 3px;
+        z-index: 1;
+        transition: transform 1s ease;
+    }
+    .bouton:after{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 150px;
+      height: 50px;
+      border-radius: 3px;
+      background-color: rgba(157, 161, 190, 1);
+      z-index: -1;
+      transition: transform 0.15s ease-in;
+      transform: scaleX(0);
+      transform-origin: right;
+    }
+    .bouton:hover:after{
+      transform: scaleX(1);
+      transform-origin: left;
+    }             
+    .bouton p a{
+        text-decoration: none;
+        color: var(--background);
+        font-size: 1.05em;
+        font-weight: 900;
+        transition: color 0.15s ease-in;
+    }
+    .bouton:hover p a{
+      color: var(--couleur3);
+    }
+    .bouton:active ~ .prez-text{
+      display: block;
+      transform: scaleY(1);
+    }
+    /* ------ ------- -------*/
+
+section.prez{
+  color: var(--couleur3);
+
+}
+.prez-text {
+display: block;  
+height: 10vh;
+max-height: 60%;
+padding: 15px 0px;
+transform: scaleY(0);
+transform-origin: top;
+transition: all 1s ease;
+}
+.prez > p:nth-child(2){
+    width: 95%;
+}
+section.prez h3{
+    font-size: 2em;
+}
+.TITRE h3:nth-child(1){
+    color: var(--couleur1);
+}
+.TITRE h3:nth-child(2){
+    color: var(--texte2);
+}
+.TITRE h3:nth-child(3){
+    color: var(--couleur2);
+}
+  
+
+/* ---- réseaux --------*/
+.reseau{
+    position: relative;
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: -5px;
+    top: -5%;
+}
+.reseau img{ 
+    width: 3.4em;
+}
+.reseau > a:nth-child(1):before{
+    content: "";
+    position: absolute;
+    width: 2.6em;
+    height: 2.6em;
+    left: 113px;
+    bottom: 11px;
+    background-color: transparent;
+    border: 2px solid var(--couleur3);
+}
+.reseau > a:nth-child(2):before{
+    content: "";
+    position: absolute;
+    left: 58px;
+    bottom: 11px;
+    width: 2.6em;
+    height: 2.6em;
+    background-color: transparent;
+    border: 2px solid var(--couleur3);
+}
+.reseau > a:nth-child(3):before{
+    content: "";
+    position: absolute;
+    left: 5px;
+    bottom: 11px;
+    width: 2.6em;
+    height: 2.6em;
+    background-color: transparent;
+    border: 2px solid var(--couleur3);
+}
+.carre{
+  display: block;
+  position: relative;
+  width: 2.6em;
+  height: 2.6em;
+  background-color: rgba(0,0,0, 0.3);
+  transform: scale(0);
+  transition: transform 0.3s ease-in;
+}
+.carre1{
+  position: absolute;
+  left: 6px;
+  top: 4px;
+}
+.carre2{
+  position: absolute;
+  left: 59px;
+  top: 4px;
+}
+.carre3{
+  position: absolute;
+  left: 115px;
+  top: 4px;
+}
+.reseau > a:nth-child(1):hover .carre1{
+  transform: scale(1);
+}
+.reseau > a:nth-child(2):hover .carre2{
+  transform: scale(1);
+}
+.reseau > a:nth-child(2):hover .carre3{
+  transform: scale(1);
+}
+/* ---- -------- --------*/
+@media screen and (min-width: 500px){
+  .titre{
+    text-align: center;
+  }
+  .bouton{
+    align-self: center;
+  }
+  .reseau{
+    align-self: center;
+  }
+}
+@media screen and (min-width: 1000px){
+  header{
+    display: grid;
+    height: 100px;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+  }
+  h2{
+    grid-column: 3/10;
+    grid-row: 2/2;
+  }
+  section.prez{
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+  }
+  .TITRE{
+    grid-row: 5/15;
+    grid-column: 3/10;
+    font-size: calc(1.1em + 0.2vw);
+  }
+  .titre{
+    text-align: left;
+   
+    
+  }
+  .burger{
+    left: -1em;
+    grid-column: 12/12;
+    margin-top: 0px;
+    grid-row: 2/2;
+  }
+  .prez-text{
+    display: block;
+    position: relative;
+    top: 2em;
+    grid-row: 2/5;
+    grid-column: 11/20;
+    width: 85%;
+    max-width: 400px;
+    overflow: visible;
+    background-color: var(--background);
+    transform: scaleY(1);
+  }
+  .bouton{
+    grid-row: 16/19;
+    grid-column: 3/10;
+  }
+  .reseau{
+    left: 2em;
+    grid-row: 14/19;
+    grid-column: 11/20;
+  }
+  .prez-text:before{
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 1.2em;
+    width: 2px;
+    height: calc(20em - 5vw);
+    background-color: var(--couleur3);
+  }
+  
+nav ul li{
+    list-style-type: none;
+    text-align: center;
+}
+nav{
+  position: absolute;
+   display: block;
+   background-color: var(--nav);
+   top: 0;
+   right: 0px;
+   width: 30%;
+   margin-top: -20px ;
+   margin: 0 auto;
+   height: 100vh;
+   overflow: hidden;
+   transform: scaleX(0);
+   transform-origin: right;
+   transition: all 0.5s ease;
+   z-index: 4;
+   transition: all 0.3 ease-in;
+}
+.croix{
+ position: relative;
+ display: block;
+ top: 25px;
+ left:10px;
+ width: 2em;
+ height: 0.2em;
+ background-color: var(--background);
+ border-radius: 2px 2px 2px 2px;
+ transform: rotate(45deg);
+ transition: all 0.3 ease-in;
+}
+.croix:after{
+ content: "";
+ position: absolute;
+ top: 0px;
+ left: 0px;
+ width: 2em;
+ height: 0.2em;
+ background-color: var(--background);
+ border-radius: 2px 2px 2px 2px;
+ transform: rotate(-90deg);
+ transition: all 0.3 ease-in;
+}
+nav div{
+ width: 2.5em;
+ height: 2.5em;
+}
+nav div:hover .croix:after{
+ transform: scale(0.8);
+}
+nav div:hover .croix{
+ transform: scale(0.8);
+}
+nav ul li{
+   list-style-type: none;
+   text-align: center;
+}
+/*header>.burger:focus ~ nav{
+   width: 200px;
+   padding-right: 200px;
+}*/
+.burger:active ~ nav{
+   transform: scaleX(1);
+}
+.burger:active{
+  display: none;
+}
+/* ------ ------- -------*/
+
+}

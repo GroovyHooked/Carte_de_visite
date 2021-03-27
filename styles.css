@@ -1,0 +1,395 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --background: #3D405B;
+    --texte: white;
+    --texte2: #E07A5F;
+    --couleur1: #81B29A;
+    --couleur2: #F2CC8F;
+    --couleur3: #F4F1DE;
+    --nav: #52567A;
+    --header: #292B3D;
+}
+body{
+    background-color: var(--background);
+    color: var(--texte);
+}
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+#content-wrap {
+    padding-bottom: 4rem;    /* Footer height */
+}
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;            /* Footer height */
+    text-align: right;
+    padding: 0 -20px;
+    background-color: var(--header);
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    line-height: 4rem;
+    background-color: var(--header);
+    padding: 0 10%;
+    color: var(--texte);
+}
+.myName{
+    color: var(--couleur1);
+}
+.myNameColor{
+    color: var(--texte2);
+}
+/*   Checkbox */
+.projet{
+    margin-top: 4px;
+}
+.check {
+    display: none;
+}
+label{
+    display: inline-flex;
+    width: 48px;
+    height: 20px;
+    background-color: var(--background);
+    border: 2px solid var(--couleur1);
+    border-radius: 20% / 50%;
+    transition: all 0.3s ease;
+}
+input:checked ~ label{
+    background-color: var(--background);
+    border: 2px solid var(--texte2);
+}
+input:checked ~ label:before{
+    transform: translateX(28px);
+}
+label:before{
+    content:"";
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-color: #fffffa;
+    border-radius: 50%;
+    margin-top: 1px;
+    transition: all 0.3s ease;
+}
+/*====================*/
+#container {
+    width: 100vw;
+    max-width: 100vw;
+    height: 90%;
+    max-height: 90%;
+    overflow: hidden;
+    position: absolute;
+    top: 65px;
+    background: var(--background);
+    z-index: -3;
+}
+
+.shape {
+    position: absolute;
+    left: 0px;
+    bottom: -400px;
+    height: 100%;
+    width: 100%;
+    fill: transparent;
+}
+
+.shape-inner {
+    fill: transparent;
+    stroke: #ffffff;
+    stroke-width: 3;
+    opacity: 0.25
+}
+/*====================*/
+.status{
+    width: 80%;
+    text-align: center;
+    align-self: center;
+}
+.status h1{
+    font-family: 'Autour One';
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: #dae1ed;
+}
+.prez{
+    display: flex;
+    flex-flow: column nowrap ;
+    min-height: 80vh;
+    justify-content: space-evenly;
+}
+.TITRE{
+    width: 80%;
+    align-self: center;
+    font-size: 1.1rem;
+    position: relative;
+}
+.TITRE:after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--texte);
+    top: calc(50% + 11vh);
+}
+.prez-text{
+    width: 80%;
+    align-self: center;
+    font-size: 0.9rem;
+    text-align: justify;
+}
+.prez-text p {
+    line-height: 1.1rem;
+    margin: 12px 0;
+}
+.reseau img{
+    width: 3.4em;
+}
+.reseau{
+    margin-right: 5%;
+    height: 100%;
+}
+section.prez h3{
+    font-size: 2rem;
+}
+.TITRE h3:nth-child(1){
+    color: var(--couleur1);
+}
+.TITRE h3:nth-child(2){
+    color: var(--texte2);
+}
+.TITRE h3:nth-child(3){
+    color: var(--couleur2);
+}
+
+/*  -----------------------  EFFET SUR TITRES H3 ------------------------------ */
+.TITRE{
+    font-size: calc(1em + 0.2vw);
+}
+.titre{
+    margin: 2px 0;
+}
+.titre span {
+    opacity: 0;
+    margin-right: -8px;  /* supprime l'espacement entre les lettres span mise à la ligne dans le html */
+}
+@keyframes anim {
+    0%{opacity: 0;}
+    25%{opacity: 0.3;}
+    50%{opacity: 0.6;}
+    75%{opacity: 0.9;}
+    100%{opacity: 1; animation-play-state: paused;}
+}
+/*      PASSION          */
+.pp{
+    animation: anim 0.3s linear 1;
+    animation-fill-mode: forwards; /*      P          */
+}
+.pa{
+    animation: anim 0.3s linear 1;     /*      A          */
+    animation-delay: 0.15s;
+    animation-fill-mode: forwards;
+}
+.ps-1{
+    animation: anim 0.3s linear 1;      /*      S         */
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+}
+.ps-2{
+    animation: anim 0.3s linear 1;     /*      S         */
+    animation-delay: 0.45s;
+    animation-fill-mode: forwards;
+}
+.pi{
+    animation: anim 0.3s linear 1;      /*      I         */
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
+}
+.po{
+    animation: anim 0.75s linear 1;        /*      O         */
+    animation-delay: 0.75s;
+    animation-fill-mode: forwards;
+}
+.pn{
+    animation: anim 0.9s linear 1;     /*      N         */
+    animation-delay: 0.9s;
+    animation-fill-mode: forwards;
+}
+/*      -------------          */
+
+/*      DETERMINATION          */
+.dd{
+    animation: anim 0.3s linear 1;          /*      D         */
+    animation-delay: 1.05s;
+    animation-fill-mode: forwards;
+}
+.de-1{
+    animation: anim 0.3s linear 1;            /*      E         */
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+}
+.dt-1{
+    animation: anim 0.3s linear 1;          /*      T         */
+    animation-delay: 1.35s;
+    animation-fill-mode: forwards;
+}
+.de-2{
+    animation: anim 0.3s linear 1;           /*      E         */
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+}
+.dr{
+    animation: anim 0.3s linear 1;       /*      R         */
+    animation-delay: 1.65s;
+    animation-fill-mode: forwards;
+}
+.dm{
+    animation: anim 0.3s linear 1;        /*      M         */
+    animation-delay: 1.8s;
+    animation-fill-mode: forwards;
+}
+.di-1{
+    animation: anim 0.3s linear 1;      /*      I         */
+    animation-delay: 1.95s;
+    animation-fill-mode: forwards;
+}
+.dn-1{
+    animation: anim 0.3s linear 1;       /*      N         */
+    animation-delay: 2.1s;
+    animation-fill-mode: forwards;
+}
+.da{
+    animation: anim 0.3s linear 1;          /*      A         */
+    animation-delay: 2.25s;
+    animation-fill-mode: forwards;
+}
+.dt-2{
+    animation: anim 0.3s linear 1;           /*      T         */
+    animation-delay: 2.4s;
+    animation-fill-mode: forwards;
+}
+.di-2{
+    animation: anim 0.3s linear 1;          /*      I         */
+    animation-delay: 2.55s;
+    animation-fill-mode: forwards;
+}
+.do{
+    animation: anim 0.3s linear 1;            /*      O         */
+    animation-delay: 2.7s;
+    animation-fill-mode: forwards;
+}
+.dn-2{
+    animation: anim 0.3s linear 1;         /*      N         */
+    animation-delay: 2.85s;
+    animation-fill-mode: forwards;
+}
+/*      -------------          */
+
+/*      ADAPTATION          */
+
+.aa-1{
+    animation: anim 0.3s linear 1;         /*      A         */
+    animation-delay: 2.85s;
+    animation-fill-mode: forwards;
+}
+.ad{
+    animation: anim 0.3s linear 1;         /*      D         */
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+.aa-2{
+    animation: anim 0.3s linear 1;         /*      A         */
+    animation-delay: 3.15s;
+    animation-fill-mode: forwards;
+}
+.ap{
+    animation: anim .3s linear 1;         /*      P         */
+    animation-delay: 3.3s;
+    animation-fill-mode: forwards;
+}
+.at-1{
+    animation: anim .3s linear 1;         /*      T         */
+    animation-delay: 3.45s;
+    animation-fill-mode: forwards;
+}
+.aa-3{
+    animation: anim .3s linear 1;         /*      A         */
+    animation-delay: 3.6s;
+    animation-fill-mode: forwards;
+}
+.at-2{
+    animation: anim .3s linear 1;         /*      T         */
+    animation-delay: 3.75s;
+    animation-fill-mode: forwards;
+}
+.ai{
+    animation: anim .3s linear 1;         /*      I         */
+    animation-delay: 3.9s;
+    animation-fill-mode: forwards;
+}
+.ao{
+    animation: anim .3s linear 1;         /*      O         */
+    animation-delay: 4.05s;
+    animation-fill-mode: forwards;
+}
+.an{
+    animation: anim 0.3s linear 1;         /*      N         */
+    animation-delay: 4.2s;
+    animation-fill-mode: forwards;
+}
+/*  ----------------------- ------------ ------------------------------ */
+
+@media screen and (min-width: 700px) {
+    .status h1{
+        font-size: calc(0.3rem + 6vw);
+    }
+    .prez{
+        display: flex;
+        flex-flow: row wrap ;
+        height: 80vh;
+        justify-content: space-evenly;
+    }
+    .TITRE{
+        width: 40%;
+        position: relative;
+        top: calc(-1px - 5vh);
+    }
+    section.prez h3{
+        font-size: calc(1.5rem + 1.3vw);
+    }
+    .prez-text{
+        width: 40%;
+        position: relative;
+        top: calc(-1px - 5vh);
+        font-size: calc(0.3rem + 1.3vw);
+    }
+    .prez-text p {
+        line-height: calc(0.5rem + 1vw);
+    }
+    header{
+        padding-left: 7%;
+        height: 4.5rem;
+        line-height: 4.5rem;
+    }
+    .TITRE:after{
+        top: -40px;
+        width: 1px;
+        height: 200px;
+        right: -20px;
+    }
+    #footer{
+        height: 4.5rem;
+    }
+    .reseau a img{
+        margin-top: 8px;
+    }
+}
