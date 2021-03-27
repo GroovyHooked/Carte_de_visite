@@ -118,8 +118,8 @@ label:before{
 .status h1{
     font-family: 'Autour One';
     font-weight: 400;
-    font-size: 2.5rem;
-    color: #dae1ed;
+    font-size: 2rem;
+    color: #f4f1de;
 }
 .prez{
     display: flex;
@@ -130,7 +130,6 @@ label:before{
 .TITRE{
     width: 80%;
     align-self: center;
-    font-size: 1.1rem;
     position: relative;
 }
 .TITRE:after{
@@ -139,13 +138,14 @@ label:before{
     width: 100%;
     height: 1px;
     background-color: var(--texte);
-    top: calc(50% + 11vh);
+    top: calc(50% + 9vh);
 }
 .prez-text{
     width: 80%;
     align-self: center;
     font-size: 0.9rem;
     text-align: justify;
+    letter-spacing: 1.2px;
 }
 .prez-text p {
     line-height: 1.1rem;
@@ -153,13 +153,14 @@ label:before{
 }
 .reseau img{
     width: 3.4em;
+    margin-top: 5px;
 }
 .reseau{
     margin-right: 5%;
     height: 100%;
 }
 section.prez h3{
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 .TITRE h3:nth-child(1){
     color: var(--couleur1);
@@ -172,9 +173,7 @@ section.prez h3{
 }
 
 /*  -----------------------  EFFET SUR TITRES H3 ------------------------------ */
-.TITRE{
-    font-size: calc(1em + 0.2vw);
-}
+
 .titre{
     margin: 2px 0;
 }
@@ -347,10 +346,9 @@ section.prez h3{
     animation-fill-mode: forwards;
 }
 /*  ----------------------- ------------ ------------------------------ */
-
 @media screen and (min-width: 700px) {
     .status h1{
-        font-size: calc(0.3rem + 6vw);
+        font-size: calc(0.3rem + 4vw);
     }
     .prez{
         display: flex;
@@ -361,16 +359,17 @@ section.prez h3{
     .TITRE{
         width: 40%;
         position: relative;
-        top: calc(-1px - 5vh);
+        top: calc(-1px - 12vh);
+
     }
     section.prez h3{
-        font-size: calc(1.5rem + 1.3vw);
+        font-size: calc(1.3rem + 1vw);
     }
     .prez-text{
         width: 40%;
         position: relative;
-        top: calc(-1px - 5vh);
-        font-size: calc(0.3rem + 1.3vw);
+        top: calc(-1px - 12vh);
+        font-size: calc(0.3rem + 1vw);
     }
     .prez-text p {
         line-height: calc(0.5rem + 1vw);
@@ -391,5 +390,40 @@ section.prez h3{
     }
     .reseau a img{
         margin-top: 8px;
+    }
+}
+@media screen and (max-height: 400px){
+    .prez{
+        display: flex;
+        flex-flow: row wrap ;
+        min-height: 30vh;
+        justify-content: space-evenly;
+    }
+    .status h1{
+        font-size: 2.5rem;
+        margin: 20px 0;
+    }
+    .TITRE{
+        width: 40%;
+        position: relative;
+        top: calc(-1px - 5vh);
+    }
+    .TITRE:after{
+        top: -40px;
+        width: 1px;
+        height: 200px;
+        right: -20px;
+    }
+    .prez-text{
+        width: 40%;
+        font-size: 0.9rem;
+        top: -6px;
+    }
+    .prez-text p {
+        line-height: 1.1rem;
+        margin: 12px 0;
+    }
+    #content-wrap {
+        padding-bottom: 8rem;    /* Footer height */
     }
 }
