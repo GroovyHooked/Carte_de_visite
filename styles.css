@@ -97,7 +97,7 @@ label:before{
 .shape {
     position: absolute;
     left: 0px;
-    bottom: -400px;
+    bottom: -150px;
     height: 100%;
     width: 100%;
     fill: transparent;
@@ -111,7 +111,7 @@ label:before{
 }
 /*====================*/
 .status{
-    width: 80%;
+    width: 100%;
     text-align: center;
     align-self: center;
 }
@@ -119,8 +119,9 @@ label:before{
     font-family: 'Autour One';
     font-weight: 400;
     font-size: 2rem;
-    color: #f4f1de;
+    color: var(--texte);
 }
+
 .prez{
     display: flex;
     flex-flow: column nowrap ;
@@ -359,16 +360,16 @@ section.prez h3{
     .TITRE{
         width: 40%;
         position: relative;
-        top: calc(-1px - 12vh);
+        top: calc(28px - 12vh);
 
     }
     section.prez h3{
-        font-size: calc(1.3rem + 1vw);
+        font-size: calc(1.3rem + 1.2vw);
     }
     .prez-text{
         width: 40%;
         position: relative;
-        top: calc(-1px - 12vh);
+        top: calc(37px - 12vh);
         font-size: calc(0.3rem + 1vw);
     }
     .prez-text p {
@@ -393,11 +394,17 @@ section.prez h3{
     }
 }
 @media screen and (max-height: 400px){
+    header{
+        height: 3.5rem;
+    }
     .prez{
         display: flex;
         flex-flow: row wrap ;
         min-height: 30vh;
         justify-content: space-evenly;
+    }
+    .status{
+        margin-top: 30px;
     }
     .status h1{
         font-size: 2.5rem;
@@ -406,10 +413,10 @@ section.prez h3{
     .TITRE{
         width: 40%;
         position: relative;
-        top: calc(-1px - 5vh);
+        top: 25px;
     }
     .TITRE:after{
-        top: -40px;
+        top: -25px;
         width: 1px;
         height: 200px;
         right: -20px;
@@ -417,13 +424,27 @@ section.prez h3{
     .prez-text{
         width: 40%;
         font-size: 0.9rem;
-        top: -6px;
+        position: relative;
+        top: 25px;
+
+    }
+    .reseau img{
+        width: 3.4em;
+        margin-top: 0;
     }
     .prez-text p {
         line-height: 1.1rem;
         margin: 12px 0;
     }
+    #page-container {
+        min-height: 100vh;
+        height: 130vh;
+    }
     #content-wrap {
         padding-bottom: 8rem;    /* Footer height */
+    }
+    #footer{
+        height: 3.5rem;
+        bottom: -155px;
     }
 }
